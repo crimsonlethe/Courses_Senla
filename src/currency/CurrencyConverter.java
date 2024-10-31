@@ -103,6 +103,7 @@ public class CurrencyConverter {
     }
     public static void convertAndDisplay(Map<String, Double> exchangeRate, double amount) {
         SortedMap<String, Double> sortedExchangeRate = new TreeMap<String, Double>(exchangeRate);
+        //need to convert Map to SortedMap so iteration would not be random
         double convertedAmount;
         for(String currency: sortedExchangeRate.keySet()) {
             convertedAmount = sortedExchangeRate.get(currency) * amount;
